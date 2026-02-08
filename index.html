@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intech Industrial Zone | Contacto</title>
+  <meta name="description" content="Catálogo, carta de presentación y contacto directo de Intech Industrial Zone." />
+  <meta name="theme-color" content="#0b0c10" />
+
+  <style>
+    :root{
+      --bg0:#07080b;
+      --bg1:#0b0c10;
+
+      --gold:#d4af37;
+      --gold2:#b88a1f;
+
+      --text:#f4f6fb;
+      --muted:rgba(244,246,251,.72);
+      --line:rgba(255,255,255,.12);
+
+      --shadow:0 24px 90px rgba(0,0,0,.60);
+
+      --wa:#25D366;
+      --waSoft:rgba(37,211,102,.16);
+
+      --fb:#1877F2;
+      --fbSoft:rgba(24,119,242,.16);
+
+      --in:#0A66C2;
+      --inSoft:rgba(10,102,194,.16);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 18% 0%, rgba(212,175,55,.18), transparent 60%),
+        radial-gradient(900px 600px at 100% 10%, rgba(212,175,55,.10), transparent 55%),
+        radial-gradient(800px 520px at 50% 110%, rgba(212,175,55,.08), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+    }
+
+    /* ====== Splash / precarga ====== */
+    .splash{
+      position:fixed; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      background:
+        radial-gradient(900px 520px at 50% 20%, rgba(212,175,55,.22), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.92), rgba(0,0,0,.96));
+      z-index:9999;
+      transition: opacity .45s ease, transform .45s ease;
+    }
+    .splash.hide{
+      opacity:0; transform: scale(1.02);
+      pointer-events:none;
+    }
+    .sCard{
+      width:min(520px, 92vw);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      border-radius: 26px;
+      padding: 22px 18px;
+      text-align:center;
+    }
+    .sLogo{
+      width:110px; height:110px;
+      margin: 0 auto 14px;
+      border-radius: 26px;
+      border:1px solid rgba(212,175,55,.35);
+      background: rgba(212,175,55,.08);
+      display:flex; align-items:center; justify-content:center;
+      overflow:hidden;
+    }
+    .sLogo img{ width:100%; height:100%; object-fit:contain; transform:scale(1.06); }
+    .sTitle{ margin:0; font-size:18px; font-weight:900; letter-spacing:.3px; }
+    .sTag{ margin:8px 0 0; color:var(--muted); font-size:13px; line-height:1.35; }
+    .sBar{
+      height:4px; border-radius:99px;
+      background: rgba(255,255,255,.10);
+      overflow:hidden;
+      margin: 16px auto 0;
+      width: min(320px, 75%);
+    }
+    .sBar > span{
+      display:block; height:100%; width:0%;
+      background: linear-gradient(90deg, var(--gold), rgba(212,175,55,.35));
+      animation: load 2.6s ease forwards;
+    }
+    @keyframes load{
+      to{ width:100% }
+    }
+
+    /* ====== Layout ====== */
+    .wrap{ width:min(980px, 100%); margin:0 auto; padding:18px; }
+    .shell{
+      border-radius: 28px;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero{
+      padding: 18px 18px 16px;
+      background:
+        radial-gradient(1000px 420px at 40% 0%, rgba(212,175,55,.24), transparent 60%),
+        linear-gradient(135deg, rgba(212,175,55,.10), rgba(0,0,0,.55) 55%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+
+    .brandRow{ display:flex; align-items:center; gap:14px; }
+    .miniLogo{
+      width:74px;height:74px;border-radius:18px;
+      border: 1px solid rgba(212,175,55,.30);
+      background: rgba(212,175,55,.08);
+      display:flex;align-items:center;justify-content:center;
+      overflow:hidden; flex:0 0 auto;
+    }
+    .miniLogo img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      transform: scale(1.08);
+      transform-origin:center;
+    }
+    .brandText h1{ margin:0; font-size:18px; letter-spacing:.2px; line-height:1.1; }
+    .brandText p{ margin:6px 0 0; color:var(--muted); font-size:13px; line-height:1.3; }
+
+    .profile{
+      display:flex; flex-direction:column; align-items:center;
+      gap:10px; margin-top:16px; text-align:center;
+    }
+
+    .avatar{
+      width:170px;height:170px;border-radius:999px;
+      border:2px solid rgba(212,175,55,.62);
+      background: rgba(45,45,45,.25);
+      overflow:hidden;
+      box-shadow: 0 16px 48px rgba(0,0,0,.40);
+      display:flex;align-items:center;justify-content:center;
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover}
+
+    .avatar img.logoMode{
+      object-fit:contain;
+      padding:0;
+      transform: scale(1.55);
+      transform-origin:center;
+      background: transparent;
+    }
+
+    .name{ margin:0; font-size:34px; letter-spacing:.2px; line-height:1.1; }
+    .role{ margin:0; color:var(--muted); font-size:14px; line-height:1.45; }
+
+    .content{
+      padding:16px 18px 90px; /* deja espacio para el botón fijo */
+      background: linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.36));
+    }
+
+    /* ====== Grid ====== */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top: 14px;
+    }
+
+    .tile{
+      border: 1px solid rgba(255,255,255,.12);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius: 22px;
+      padding: 16px 14px;
+      text-decoration:none;
+      color: var(--text);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+      min-height:128px;
+      position:relative;
+      overflow:hidden;
+      transition: transform .14s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .tile::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(420px 220px at 30% 0%, rgba(212,175,55,.18), transparent 60%);
+      opacity:.0;
+      transition: opacity .25s ease;
+      pointer-events:none;
+    }
+    .tile:hover{
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,.18);
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+    }
+    .tile:hover::before{ opacity:.75; }
+
+    /* Íconos más grandes y “de marca” */
+    .icon{
+      width:72px;height:72px;border-radius:22px;
+      display:flex;align-items:center;justify-content:center;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.20);
+      overflow:hidden;
+    }
+    .icon svg{ width:44px; height:44px; display:block; }
+
+    .tileTitle{ font-weight:950; font-size:14px; text-align:center; letter-spacing:.2px; }
+    .tileSub{ margin-top:-6px; color:var(--muted); font-size:12px; text-align:center; line-height:1.3; }
+
+    /* Variantes por marca (mejor punch visual) */
+    .tile.wa .icon{ border-color: rgba(37,211,102,.55); background: linear-gradient(180deg, var(--waSoft), rgba(0,0,0,.15)); }
+    .tile.fb .icon{ border-color: rgba(24,119,242,.55); background: linear-gradient(180deg, var(--fbSoft), rgba(0,0,0,.15)); }
+    .tile.in .icon{ border-color: rgba(10,102,194,.55); background: linear-gradient(180deg, var(--inSoft), rgba(0,0,0,.15)); }
+    .tile.ct .icon{ border-color: rgba(212,175,55,.45); background: linear-gradient(180deg, rgba(212,175,55,.14), rgba(0,0,0,.16)); }
+
+    /* ====== Sticky CTA (siempre visible abajo) ====== */
+    .stickyBar{
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      display:flex;
+      justify-content:center;
+      padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,.72));
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+    .bigBtn{
+      width: min(820px, 92vw);
+      padding: 14px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(212,175,55,.55);
+      background: linear-gradient(180deg, rgba(212,175,55,.20), rgba(212,175,55,.10));
+      color: var(--text);
+      text-decoration:none;
+      font-weight: 950;
+      display:flex; align-items:center; justify-content:center; gap:10px;
+      box-shadow: 0 18px 44px rgba(0,0,0,.35);
+      transition: transform .14s ease, border-color .2s ease, background .2s ease;
+    }
+    .bigBtn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(212,175,55,.85);
+      background: linear-gradient(180deg, rgba(212,175,55,.26), rgba(212,175,55,.12));
+    }
+
+    .foot{
+      padding: 14px 18px 18px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-size: 12px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+      background: rgba(0,0,0,.22);
+    }
+    .foot a{ color: rgba(212,175,55,.95); text-decoration:none; font-weight:900; }
+
+    /* ====== Responsive: 2 columnas en teléfono ====== */
+    @media (max-width: 820px){
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+      .name{ font-size:30px; }
+      .avatar{ width:152px; height:152px; }
+      .miniLogo{ width:64px; height:64px; }
+    }
+    @media (max-width: 390px){
+      .grid{ grid-template-columns: 1fr; } /* teléfonos muy pequeños */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Splash (precarga 3s) -->
+  <div class="splash" id="splash">
+    <div class="sCard">
+      <div class="sLogo"><img src="./logo.png" alt="Intech" /></div>
+      <h2 class="sTitle">Intech Industrial Zone</h2>
+      <p class="sTag">Automatización · Mantenimiento · Soporte técnico</p>
+      <div class="sBar"><span></span></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="shell">
+
+      <section class="hero">
+        <div class="brandRow">
+          <div class="miniLogo"><img src="./logo.png" alt="Logo Intech" /></div>
+          <div class="brandText">
+            <h1>Intech Industrial Zone</h1>
+            <p>Documentos · Descarga · Contacto directo</p>
+          </div>
+        </div>
+
+        <div class="profile">
+          <div class="avatar">
+            <img id="avatarImg" src="./foto.png" alt="Foto / Identidad">
+          </div>
+          <h2 class="name">Jairo Negrete Barradas</h2>
+	  <p class="role">Director de Mantenimiento</p>
+          <p class="role">Servicios industriales · Mantenimiento · Automatización · Soporte técnico</p>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="grid">
+
+          <!-- 1) WhatsApp -->
+          <a class="tile wa"
+             href="https://wa.me/525525202842?text=Hola%20Jairo%20Negrete,%20quiero%20cotizar"
+             target="_blank" rel="noopener">
+            <div class="icon">
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+                <path fill="var(--wa)" d="M19.11 17.2c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.41.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47l-.52-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3 0 1.36.98 2.67 1.12 2.86.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+                <path fill="var(--wa)" d="M27.17 4.83A14.97 14.97 0 0 0 16.01 0C7.18 0 .01 7.17.01 16c0 2.82.74 5.58 2.14 8.02L0 32l8.2-2.12A15.94 15.94 0 0 0 16.01 32C24.84 32 32 24.83 32 16c0-4.27-1.66-8.28-4.83-11.17zM16.01 29.3c-2.42 0-4.79-.65-6.86-1.89l-.49-.29-4.87 1.26 1.3-4.75-.32-.49A13.25 13.25 0 0 1 2.71 16C2.71 8.67 8.68 2.7 16.01 2.7c3.54 0 6.87 1.38 9.37 3.88A13.17 13.17 0 0 1 29.3 16c0 7.33-5.97 13.3-13.29 13.3z"/>
+              </svg>
+            </div>
+            <div class="tileTitle">WhatsApp</div>
+            <div class="tileSub">Cotiza rápido</div>
+          </a>
+
+          <!-- 2) Guardar contacto (descarga vCard) -->
+          <a class="tile ct" href="./contacto.vcf" download>
+            <div class="icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="var(--gold)" d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"/>
+              </svg>
+            </div>
+            <div class="tileTitle">Guardar contacto</div>
+            <div class="tileSub">vCard</div>
+          </a>
+
+          <!-- 3) Catálogo -->
+          <a class="tile" href="./Catalogo.pdf" target="_blank" rel="noopener">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#fff" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Zm0 2.5L18.5 9H14Z"/>
+              </svg>
+            </div>
+            <div class="tileTitle">Catálogo</div>
+            <div class="tileSub">Abrir PDF</div>
+          </a>
+
+          <!-- 4) Carta -->
+          <a class="tile" href="./CartaPresentacion.pdf" target="_blank" rel="noopener">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#fff" d="M4 4a2 2 0 0 1 2-2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm4 6h8v2H8zm0 4h8v2H8z"/>
+              </svg>
+            </div>
+            <div class="tileTitle">Carta</div>
+            <div class="tileSub">Presentación</div>
+          </a>
+
+          <!-- 5) Facebook -->
+          <a class="tile fb" href="https://www.facebook.com/share/1DL4T3YVhb/" target="_blank" rel="noopener">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="var(--fb)" d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.09 4.39 23.08 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.03 1.8-4.71 4.57-4.71 1.32 0 2.7.24 2.7.24v2.98h-1.52c-1.5 0-1.97.94-1.97 1.9v2.28h3.35l-.54 3.49h-2.81V24C19.61 23.08 24 18.09 24 12.07z"/>
+              </svg>
+            </div>
+            <div class="tileTitle">Facebook</div>
+            <div class="tileSub">Síguenos</div>
+          </a>
+
+          <!-- 6) LinkedIn -->
+          <a class="tile in" href="https://www.linkedin.com/in/marcos-francisco-perez-barrera-616a66343" target="_blank" rel="noopener">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="var(--in)" d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.68H9.35V9h3.42v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.64 0 4.31 2.4 4.31 5.52v6.22zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/>
+              </svg>
+            </div>
+            <div class="tileTitle">LinkedIn</div>
+            <div class="tileSub">Conecta</div>
+          </a>
+
+        </div>
+      </section>
+
+      <footer class="foot">
+        <span>© Intech Industrial Zone</span>
+        <span>
+          <a href="./Catalogo.pdf" target="_blank" rel="noopener">PDF Catálogo</a> ·
+          <a href="./CartaPresentacion.pdf" target="_blank" rel="noopener">PDF Carta</a>
+        </span>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Sticky CTA siempre visible -->
+  <div class="stickyBar">
+    <a class="bigBtn"
+       href="https://wa.me/528446075525?text=Hola%20Intech%20Industrial%20Zone,%20mis%20datos%20son:%0A-%20Nombre:%0A-%20Empresa:%0A-%20Ciudad:%0A-%20Servicio%20que%20necesito:%0A"
+       target="_blank" rel="noopener">
+      ➜ Déjame tus datos
+    </a>
+  </div>
+
+  <script>
+    // Splash: 3 segundos y se quita (también cuando termina de cargar)
+    const splash = document.getElementById('splash');
+    const hideSplash = () => splash.classList.add('hide');
+    window.addEventListener('load', () => setTimeout(hideSplash, 3000));
+    setTimeout(hideSplash, 3500); // respaldo
+
+    // Si foto.png no existe, usa logo.png como identidad
+    const img = document.getElementById('avatarImg');
+    img.addEventListener('error', () => {
+      img.src = './logo.png';
+      img.classList.add('logoMode');
+    });
+  </script>
+</body>
+</html>
